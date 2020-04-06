@@ -1,0 +1,17 @@
+<% include ../partials/header.ejs %>
+<br>
+<br>
+<br>
+<div class="ui raised very padded text container segment">
+    <div>
+        <h2 class="ui icon header">Write something comfortable here...</h2>
+    </div>
+    <form action="/posts/<%= obj._id %>/comments" method="POST" class="ui form">
+        <div class="field">
+            <textarea name="comment[body]" rows="12" placeholder="new post goes there..."></textarea>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>

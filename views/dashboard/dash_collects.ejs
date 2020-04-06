@@ -1,0 +1,56 @@
+<% include ../partials/header.ejs %>
+<br>
+<div class="ui container">
+    <!--<div>-->
+    <!--<h1>Hi <%= currentUser.username %>!</h1>-->
+    <!--</div>-->
+    <div class="ui grid">
+        <div class="thirteen wide stretched column">
+            <div class="ui cards">
+                <!--Individual information-->
+                <% obj.forEach(function (post) { %>
+                    <div class="card">
+                        <div class="content">
+                            <div class="meta right floated">Author: <%= post.author.authorName %></div>
+                            <div class="meta"><%= post.date.toDateString() %></div>
+                            <div class="ui divider"></div>
+
+                            <div class="right floated">
+                                <i class="comment icon"></i><%= post.comments.length %>
+                                <i class="heart outline icon"></i><%= post.meta.collects %>
+                                <i class="arrow up icon"></i><%= post.meta.votes %>
+                            </div>
+                            <div class="header"><%= post.title %> </div>
+
+                            <div>
+                                <% post.tag.forEach(function (ele) { %>
+                                    <a class="ui mini green label"><%= ele %></a>
+                                <% }) %>
+                            </div>
+
+                            <br>
+                            <div class="description">
+                                <p><%= post.body.substring(0, 200); %> ...</p>
+                            </div>
+
+                        </div>
+                        <a href="/posts/<%= post._id %>" class="ui bottom attached button">
+                            <i class="add icon"></i> See detail
+                        </a>
+                    </div>
+                <% }) %>
+                <!--Individual information-->
+            </div>
+        </div>
+        <div class="three wide column">
+            <div class="ui vertical fluid right tabular menu">
+                <a href="/dashboard" class="dashboardMenu item">Profile</a>
+                <a href="/dashboard/posts" class="dashboardMenu item">Your Tree Holes</a>
+                <a href="/dashboard/collects" class="dashboardMenu item active">Collects</a>
+                <a href="/dashboard/messages" class="dashboardMenu item">Message</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% include ../partials/footer.ejs %>

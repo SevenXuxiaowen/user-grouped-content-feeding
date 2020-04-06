@@ -1,0 +1,27 @@
+<% include ../partials/header.ejs %>
+<br>
+<br>
+<br>
+<div class="ui raised very padded text container segment">
+    <div>
+        <h1 class="ui icon header">Register</h1>
+    </div>
+    <div class="ui divider"></div>
+    <form action="/register" method="post" class="ui form">
+        <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" placeholder="Password" required>
+        </div>
+        <div class="field">
+            <label>Conform password</label>
+            <input type="password" name="password" placeholder="Confirm password" required>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>

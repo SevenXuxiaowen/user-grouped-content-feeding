@@ -1,0 +1,49 @@
+<% include ../partials/header.ejs %>
+<br>
+<div class="ui container">
+    <!--<div>-->
+        <!--<h1>Hi <%= currentUser.username %>!</h1>-->
+    <!--</div>-->
+    <div class="ui grid">
+        <div class="thirteen wide stretched column">
+            <div>
+                <h1 class="ui center aligned header">
+                    <img src="http://res.freestockphotos.biz/pictures/16/16627-illustrated-silhouette-of-a-black-cat-pv.png">
+                    <div class="content">
+                        <%= currentUser.username %>
+                        <div class="sub header">Species: <%= currentUser.species %></div>
+                    </div>
+                </h1>
+                <br>
+                <div class="ui divider"></div>
+                <br>
+                <div class="ui relaxed grid">
+                    <div class="three column row">
+                        <div class="column ui center aligned header">
+                            <span class="ui green huge header"> <%= currentUser.stats.posts %></span>
+                            Posts
+                        </div>
+                        <div class="column ui center aligned header">
+                            <span class="ui green huge header"> <%= currentUser.stats.collects %></span>
+                            Collects
+                        </div>
+                        <div class="column ui center aligned header">
+                            <span class="ui green huge header"> <%= currentUser.stats.comments %></span>
+                            Comments
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="three wide column">
+            <div class="ui vertical fluid right tabular menu">
+                <a href="/dashboard" class="dashboardMenu item active">Profile</a>
+                <a href="/dashboard/posts" class="dashboardMenu item">Your Tree Holes</a>
+                <a href="/dashboard/collects" class="dashboardMenu item">Collects</a>
+                <a href="/dashboard/messages" class="dashboardMenu item">Message</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% include ../partials/footer.ejs %>

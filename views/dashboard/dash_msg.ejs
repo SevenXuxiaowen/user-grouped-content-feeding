@@ -1,0 +1,22 @@
+<% include ../partials/header.ejs %>
+<br>
+<div class="ui container">
+    <!--<div>-->
+    <!--<h1>Hi <%= currentUser.username %>!</h1>-->
+    <!--</div>-->
+    <div class="ui grid">
+        <div class="thirteen wide stretched column">
+            Messages
+        </div>
+        <div class="three wide column">
+            <div class="ui vertical fluid right tabular menu">
+                <a href="/dashboard" class="dashboardMenu item">Profile</a>
+                <a href="/dashboard/posts" class="dashboardMenu item">Your Tree Holes</a>
+                <a href="/dashboard/collects" class="dashboardMenu item">Collects</a>
+                <a href="/dashboard/messages" class="dashboardMenu item active">Message</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% include ../partials/footer.ejs %>

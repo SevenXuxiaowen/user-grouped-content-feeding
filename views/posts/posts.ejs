@@ -1,0 +1,67 @@
+<% include ../partials/header.ejs %>
+<div class="ui container">
+    <div>
+        <br>
+    </div>
+    <div class="ui grid">
+        <div class="thirteen wide stretched column">
+            <div class="ui cards">
+                <!--Individual information-->
+                <% obj.forEach(function (post) { %>
+                    <div class="card">
+                        <div class="content">
+                            <div class="meta right floated">Author: <%= post.author.authorName %></div>
+                            <div class="meta"><%= post.date.toDateString() %></div>
+                            <div class="ui divider"></div>
+
+                            <div class="right floated">
+                                <i class="comment icon"></i><%= post.comments.length %>
+                                <i class="heart outline icon"></i><%= post.meta.collects %>
+                                <i class="arrow up icon"></i><%= post.meta.votes %>
+                            </div>
+                            <div class="header"><%= post.title %> </div>
+
+                            <div>
+                                <% post.tag.forEach(function (ele) { %>
+                                    <a class="ui mini green label"><%= ele %></a>
+                                <% }) %>
+                            </div>
+
+                            <br>
+                            <div class="description">
+                                <p><%= post.body.substring(0, 200); %> ...</p>
+                            </div>
+
+                        </div>
+                        <a href="/posts/<%= post._id %>" class="ui bottom attached button">
+                            <i class="add icon"></i> See detail
+                        </a>
+                    </div>
+                <% }) %>
+                <!--Individual information-->
+            </div>
+        </div>
+        <div class="three wide column" >
+
+            <div class="ui vertical fluid right tabular stackable menu">
+                <% if (menuId == 0) { %>
+                    <a id="side-new-btn" href="/posts" class="active item"><i class="calendar times outline icon"></i>New</a>
+                    <a id="side-hot-btn" href="/posts/sort/hot" class="item"><i class="fire icon"></i>Hottest</a>
+                    <a id="side-rec-btn" href="/posts/sort/recommendations" class="item"><i class="filter icon"></i>Recommendations</a>
+                <% } else if (menuId == 1) { %>
+                        <a id="side-new-btn" href="/posts" class="item"><i class="calendar times outline icon"></i>New</a>
+                        <a id="side-hot-btn" href="/posts/sort/hot" class="active item"><i class="fire icon"></i>Hottest</a>
+                        <a id="side-rec-btn" href="/posts/sort/recommendations" class="item"><i class="filter icon"></i>Recommendations</a>
+                <% } else { %>
+                        <a id="side-new-btn" href="/posts" class="item"><i class="calendar times outline icon"></i>New</a>
+                        <a id="side-hot-btn" href="/posts/sort/hot" class="item"><i class="fire icon"></i>Hottest</a>
+                        <a id="side-rec-btn" href="/posts/sort/recommendations" class="active item"><i class="filter icon"></i>Recommendations</a>
+
+                <% }%>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<% include ../partials/footer.ejs %>

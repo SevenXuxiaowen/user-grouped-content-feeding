@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trauma Forest</title>
+    <link rel="stylesheet" href="/css/test.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="/js/control.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+</head>
+
+<body>
+<div class="ui fixed inverted menu ">
+    <div class="ui container">
+
+        <a href="/posts" class="item "><i class="inverted green big tree icon"></i><p class="ui green header" style="margin: 0">Trauma Forest</p></a>
+        <a href="/posts/new" class="item"><i class="plus icon"></i>Tree hole</a>
+        <form id="search-form" action="/search" method="post" class="ui search" style="margin: auto 20px">
+            <div class="ui icon input">
+                <input name="keyword" class="prompt" type="text" placeholder="Search keyword">
+                <i id="search-btn" class="search icon link"></i>
+            </div>
+        </form>
+
+        <% if (!currentUser) { %>
+            <a class="right floated item" href="/login"><i class="sign-in icon"></i>Login</a>
+            <a class="item" href="/register"><i class="user icon"></i>Register</a>
+        <% } else { %>
+            <p class="right floated item" style="margin: 0">Hi  <%= currentUser.username %>!</p>
+            <a class="item" href="/dashboard"><i class="cog icon"></i>Dashboard</a>
+            <a class="item" href="/logout"><i class="sign-out icon"></i>Logout</a>
+        <% } %>
+
+    </div>
+</div>
+<br><br><br>

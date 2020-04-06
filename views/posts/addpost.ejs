@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+<br>
+<br>
+<br>
+<div class="ui raised very padded text container segment">
+    <div>
+        <h2 class="ui icon header">A Tree Hole</h2>
+    </div>
+    <form action="/posts" method="POST" class="ui form">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="post[title]" placeholder="title">
+        </div>
+
+        <div class="field">
+            <label>Body</label>
+            <textarea name="post[body]" rows="12" placeholder="new post goes there..."></textarea>
+        </div>
+        <button class="ui violet primary basic button" type="submit">Submit</button>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>
