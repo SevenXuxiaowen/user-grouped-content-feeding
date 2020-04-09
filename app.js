@@ -49,7 +49,7 @@ app.use(function(req, res, next){
 
 // AUTH CONFIG END =================================================== //
 
-//seedDB(); // Import some initial data to database for TEST
+seedDB(); // Import some initial data to database for TEST
 
 app.get("/", function (req, res) {
     res.redirect("/posts");
