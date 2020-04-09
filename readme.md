@@ -3,7 +3,7 @@ Creator: Xiaowen Xu | Andrew Id: xiaowenx <br> Enterprise Web Development (CMU 9
 
 ## Description
 I create this website to decrease the anxiety of people who have mental hurt in modern society.
-A website that can collect users' trauma stories to the "tree holes". Let other users to comment and collect those tree holes. With so many trauma tree holes, this website is called "Trauma Forest". 
+A website that can collect users' trauma stories to the 'tree holes'. Let other users to comment and collect those tree holes. With so many trauma tree holes, this website is called 'Trauma Forest'. 
 
 ## Env Setting
 1. Install `node.js`
