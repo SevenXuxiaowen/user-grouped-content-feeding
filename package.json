@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "The demo for Enterprise Web Development (CMU 95-882) project.",
   "main": "app.js",
+  "engines":{
+    "node": "12.14.1",
+    "npm" : "6.13.4"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"

@@ -4,6 +4,7 @@ const express    = require("express"),
       mongoose   = require("mongoose"),
       passport   = require("passport"),
       LocalStrategy = require("passport-local"),
+      keys = require("./config/keys")
 
       seedDB     = require("./seed"),
       nli = require("./nli"),
@@ -20,7 +21,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
-mongoose.connect('mongodb://localhost/trauma_forest', {useNewUrlParser: true, autoIndex: false});
+
+// console.log(keys);
+mongoose.connect(keys.MONGO_URI, {useNewUrlParser: true, autoIndex: false}, ()=>{
+    console.log("Successfully connect to DB");
+});
 
 // PASSPORT CONFIG =================================================== //
 app.use(require("express-session")({
@@ -44,7 +49,7 @@ app.use(function(req, res, next){
 
 // AUTH CONFIG END =================================================== //
 
-seedDB(); // Import some initial data to database for TEST
+//seedDB(); // Import some initial data to database for TEST
 
 app.get("/", function (req, res) {
     res.redirect("/posts");
@@ -452,6 +457,7 @@ function isLoggedIn(req, res, next){
     res.redirect("/login");
 }
 
-app.listen(3000, function () {
-    console.log("App is listening to 3000 ......");
+const PORT = process.env.PORT || 3000
+app.listen(PORT, ()=>{
+		console.log(`app is listening to ${PORT}`);
 });
